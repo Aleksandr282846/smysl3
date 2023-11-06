@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 import unittest
 
 
@@ -18,9 +19,9 @@ class BasicInstallTest(unittest.TestCase):
 
     def test_home_page_header(self):
         # Шапка сайта
-        browser = self.browser.get('http://127.0.0.1:8000')
-        header = browser.find_element_by_tag_name('h1')[0]
-        self.assertIn('Алексей Куличевский', header)
+        self.browser.get('http://127.0.0.1:8000')
+        header = self.browser.find_element(By.TAG_NAME, 'h1')
+        self.assertIn('Алексей Куличевский', header.text)
         # self.fail('Finish the test!')
 
 
