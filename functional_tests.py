@@ -34,8 +34,8 @@ class BasicInstallTest(unittest.TestCase):
             'article-title')
         article_summary = self.browser.find_element_by_class_name(
             'article-summary')
-        self.assertTrue('article_title')
-        self.assertTrue('article_summary')
+        self.assertTrue(article_title)
+        self.assertTrue(article_summary)
 
 
 if __name__ == '__main__':
