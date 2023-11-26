@@ -4,12 +4,16 @@ from django.test import LiveServerTestCase
 from blog.models import Article
 from datetime import datetime
 import pytz
+import os
 
 
 class BasicInstallTest(LiveServerTestCase):
 
     def setUp(self) -> None:
         self.browser = webdriver.Chrome()
+        staging_server = os.environ.get('STAGING_SERVER')
+        if staging_server:
+            self.live_server_url = 'http://' + staging_server
         Article.objects.create(
             title='title 1',
             summary='summary 1',

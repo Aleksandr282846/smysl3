@@ -8,9 +8,12 @@
 
 
 
-
-<div class="article">
-    <h2 class="article-title">{{ article.title }}</h2>
-    <p class="article-text">{{ article.full_text }}</p>
+<div class="row">
+    <div class="col-md-8 col-sm-12">
+        <div class="article">
+            <h2 class="article-title">{{ article.title }}</h2>
+            <p class="article-text">{{ article.full_text | safe }}</p>
+        </div>
+    </div>
 </div>
 {% endblock %}
